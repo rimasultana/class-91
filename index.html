@@ -3,22 +3,24 @@
 <head>
 <body>
     <h2>Javascript</h2>
-    <form name="myForm" action="" onsubmit="return
-    validateForm()">
-Name: <input type="text" name="fname"    >
-<input type="submit" value="Submit">
-</form>
-    
+
+    <p>Please input a number between 1 and 10: </p>
+    <input type="number">
+    <button type="button" onclick="myFunction()">submit</button>
+    <p id="demo"></p>
 </body>
 <script>
-function validateForm(){
-    let x = document.forms["myForm"]
-    ["fname"].value;
-    if(x == ""){
-        alert("Name must be filled out");
-        return false;
-    }
-}
+    function myFunction(){
+        let x = document.getElementById("number").value;
 
+    let x;
+    if(isNaN(x) || x < 1 || x > 20){
+        text = "Input not valid";
+
+    }else{
+        text = "Input is ok";
+    }
+    document.getElementById("demo").innerHTML = text;
+    }
 </script>
 </html>
